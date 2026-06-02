@@ -19,7 +19,7 @@
 #
 
 
- OF_MAINTAINER := Jonas Salo & Daniel Springer
+ OF_MAINTAINER := Verevka
  OF_SCREEN_H := 2340
  OF_STATUS_H := 135
  OF_HIDE_NOTCH := 1
