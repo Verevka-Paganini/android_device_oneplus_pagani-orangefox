@@ -101,15 +101,10 @@ payload_extract -i "$package" -x -o "$tmpdir/payload" -T4
 ui_print "-- Extraction Time: $(( $(date +%s) - startTime_s )) seconds"
 
 
-ui_print "-- Using preset OxygenOS my_company and my_preload"
-cp -f "/system/bin/my_company.img" "$tmpdir/payload/"
-cp -f "/system/bin/my_preload.img" "$tmpdir/payload/"
-
-
 ui_print "-- Synthesizing super.img..."
 startTime_s=$(date +%s)
 mkdir -p $tmpdir/super
-for img in system.img system_ext.img product.img vendor.img vendor_dlkm.img system_dlkm.img odm.img my_product.img my_engineering.img my_stock.img my_heytap.img my_carrier.img my_region.img my_bigball.img my_manifest.img my_preload.img my_company.img; do
+for img in system.img system_ext.img product.img vendor.img vendor_dlkm.img system_dlkm.img odm.img my_product.img my_engineering.img my_stock.img my_heytap.img my_carrier.img my_region.img my_bigball.img my_manifest.img; do
   [ -f "$tmpdir/payload/$img" ] && mv -f "$tmpdir/payload/$img" "$tmpdir/super"
 done
 mksuper $tmpdir/super $tmpdir/super.img  
